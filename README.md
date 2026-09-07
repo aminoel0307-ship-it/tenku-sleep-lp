@@ -3,6 +3,12 @@
 「天空睡眠®︎ドライヘッドスパスクール」の無料説明会申込みを獲得するための、日本語1ページ完結型LPです。
 ビルドツールを使わない、静的HTML/CSS/JSのシンプルな構成です（`amy-1p` と同じ構成・デザイントーンを踏襲しています）。
 
+## 公開URL
+
+https://aminoel0307-ship-it.github.io/tenku-sleep-lp/
+
+GitHub Actions（`.github/workflows/deploy.yml`）により、`main` ブランチへのpush時に自動でGitHub Pagesへデプロイされます。
+
 ## 構成
 
 ```
@@ -49,10 +55,8 @@ window.SITE_CONFIG = {
 
 ## ⚠️ 公開前に必ず差し替えていただきたい項目（現在は仮設定のままです）
 
-以下は、架空のURL・情報を設定せず、あえて仮の状態のまま残しています。正式な情報が確定次第、差し替えてください。
-
-- **本番公開ドメイン**：現在 `index.html` 内の `<link rel="canonical">` と OGP用URL（`og:url` / `og:image` / `twitter:image`）は `https://example.com/` という仮URLのままです。GitHub Pagesで公開後、確定したURLに差し替えてください
-- **OGP画像（`og-image.png`）**：現時点では未作成・未設置です。SNSシェア時のサムネイル用に、1200×630pxのブランド画像をご用意のうえ、リポジトリ直下に `og-image.png` として追加してください
+- **本番公開ドメイン**：GitHub PagesのURL（`https://aminoel0307-ship-it.github.io/tenku-sleep-lp/`）に更新済みです。将来的に独自ドメインを取得した場合は、`index.html` 内の `<link rel="canonical">` と OGP用URL（`og:url` / `og:image` / `twitter:image`）を新しいドメインに差し替えてください
+- **OGP画像（`og-image.png`）**：現時点では未作成・未設置です。SNSシェア時のサムネイル用に、1200×630pxのブランド画像をご用意のうえ、リポジトリ直下に `og-image.png` として追加してください（追加するまでは、SNSでシェアしても画像は表示されません）
 - **フッターのリンク**：「プライバシーポリシー」「特定商取引法に基づく表記」「お問い合わせ」は、現在いずれも仮のリンク（`#`）のままです。正式URLが決まり次第、差し替えてください
 - 各講座の具体的な受講条件（現在は「詳細は無料説明会・公式LINEにてご案内」という案内に留めています）
 
