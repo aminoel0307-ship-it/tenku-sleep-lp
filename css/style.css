@@ -667,31 +667,59 @@ main { padding-top: 56px; }
   .photo-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ---------- Achievement network / sub-CTA ---------- */
-.achievement-network {
+/* ---------- Worldwide panel (TENKU WORLDWIDE) ---------- */
+.worldwide-panel {
   margin: 56px auto 0;
-  padding-top: 40px;
-  border-top: 1px solid rgba(198, 161, 91, 0.3);
-  max-width: 640px;
+  padding: 40px 28px;
+  max-width: 720px;
+  background: var(--color-ink);
+  border: 1px solid var(--color-gold);
+  border-radius: 2px;
   text-align: center;
 }
 
-.achievement-network__title {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: clamp(1.15rem, 3.6vw, 1.4rem);
-  color: var(--color-gold-deep);
-  margin: 0 0 20px;
-  line-height: 1.6;
+.worldwide-panel__eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  color: var(--color-gold-light);
+  margin: 0 0 18px;
+  text-transform: uppercase;
 }
 
-.achievement-network__text {
+.worldwide-panel__title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 4.4vw, 1.6rem);
+  color: var(--color-white);
+  margin: 0 0 28px;
+  line-height: 1.7;
+}
+
+.worldwide-panel__text {
   font-size: 0.92rem;
   line-height: 1.9;
-  color: var(--color-ink-soft);
-  margin: 0 0 16px;
+  color: rgba(246, 241, 231, 0.82);
+  margin: 0 auto 18px;
+  max-width: 600px;
 }
-.achievement-network__text:last-of-type { margin-bottom: 28px; }
+.worldwide-panel__text--link {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(198, 161, 91, 0.25);
+}
+
+.worldwide-panel .photo-grid {
+  margin-top: 8px;
+}
+.worldwide-panel .photo-grid__frame {
+  border-color: rgba(198, 161, 91, 0.4);
+  background: rgba(198, 161, 91, 0.06);
+  color: rgba(230, 205, 151, 0.6);
+}
+.worldwide-panel .photo-grid__item figcaption {
+  color: rgba(246, 241, 231, 0.78);
+  font-size: 0.76rem;
+}
 
 .achievement-cta {
   margin-top: 40px;
@@ -852,6 +880,49 @@ main { padding-top: 56px; }
   border: 1px solid rgba(198, 161, 91, 0.3);
   border-radius: 2px;
   padding: 32px 28px;
+}
+
+.person-card__photo {
+  width: 128px;
+  margin: 0 auto 20px;
+}
+
+.person-card__photo-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  padding: 6px;
+  border: 1px solid rgba(198, 161, 91, 0.5);
+  background: var(--color-black);
+}
+
+.person-card__photo-frame div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(198, 161, 91, 0.45);
+  background: rgba(198, 161, 91, 0.06);
+  color: rgba(230, 205, 151, 0.55);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  text-align: center;
+  padding: 8px;
+}
+
+.person-card__photo-caption {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: rgba(230, 205, 151, 0.55);
+  text-align: center;
+  margin: 10px 0 0;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .person-card { display: flow-root; }
+  .person-card__photo { float: left; margin: 0 24px 16px 0; }
+  .person-card__photo-caption { text-align: left; }
 }
 
 .person-card__eyebrow {
