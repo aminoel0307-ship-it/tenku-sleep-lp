@@ -151,8 +151,25 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   line-height: 1.3;
 }
 
+@media (max-width: 480px) {
+  .site-header__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .site-header__cta {
+    width: 100%;
+  }
+}
+
 /* ---------- Layout helpers ---------- */
 main { padding-top: 56px; }
+
+@media (max-width: 480px) {
+  main { padding-top: 108px; }
+}
 
 .section {
   padding: var(--section-pad-y) var(--section-pad-x);
@@ -214,6 +231,7 @@ main { padding-top: 56px; }
 .section--ivory .prose p.prose__highlight { color: var(--color-ink); }
 .section--ivory .section__closing { color: var(--color-ink-soft); }
 .section--dark .dot-list li { color: rgba(246, 241, 231, 0.82); }
+.section--ivory .seminar-subhead { color: var(--color-gold-deep); }
 
 .section__emphasis {
   font-family: var(--font-serif);
@@ -594,6 +612,38 @@ main { padding-top: 56px; }
   .curriculum-cards { grid-template-columns: 1fr 1fr; gap: 20px; }
 }
 
+/* ---------- Course levels ---------- */
+.course-levels {
+  margin-top: 56px;
+  text-align: center;
+}
+
+.course-levels__steps {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  line-height: 2.2;
+  color: var(--color-gold-deep);
+  margin: 0 0 16px;
+}
+
+.course-levels__step {
+  white-space: nowrap;
+}
+
+.course-levels__arrow {
+  color: var(--color-gold);
+  margin: 0 4px;
+  font-weight: 400;
+}
+
+.course-levels__note {
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
 /* ---------- Curriculum closing ---------- */
 .curriculum-closing {
   margin-top: 56px;
@@ -815,13 +865,15 @@ main { padding-top: 56px; }
   border-radius: 999px;
 }
 
-.seminar-who {
+.seminar-who,
+.seminar-topics {
   width: 100%;
   max-width: 560px;
   margin: 56px auto 0;
 }
 
-.seminar-who .check-list {
+.seminar-who .check-list,
+.seminar-topics .check-list {
   margin: 24px 0 0;
   text-align: left;
 }

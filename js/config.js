@@ -7,6 +7,6 @@
  * 自動で反映されます（新しいタブで開きます）。
  */
 window.SITE_CONFIG = {
-  // 公式LINE（無料説明会の申込み窓口）※仮のURLです。実際の友だち追加URLに差し替えてください
-  seminarUrl: "https://lin.ee/xxxxxxxxx"
+  // 公式LINE（無料相談・お問い合わせ窓口）
+  seminarUrl: "https://lin.ee/FCeqwRp"
 };
