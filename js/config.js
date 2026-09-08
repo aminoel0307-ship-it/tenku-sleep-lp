@@ -8,5 +8,5 @@
  */
 window.SITE_CONFIG = {
   // 公式LINE（無料相談・お問い合わせ窓口）
-  seminarUrl: "https://lin.ee/FCeqwRp"
+  seminarUrl: "https://lin.ee/C0byPWO"
 };

@@ -12,13 +12,28 @@ GitHub Actions（`.github/workflows/deploy.yml`）により、`main` ブラン�
 ## 構成
 
 ```
-index.html      … LP本体（全13セクション、SEO/OGPメタタグ込み）
+index.html      … LP本体（全15セクション、SEO/OGPメタタグ込み）
 css/style.css   … スタイル（黒×ゴールド×アイボリー、モバイルファースト）
 js/config.js    … CTAリンク先（公式LINE友だち追加URL）の設定（ここを書き換えるだけでOK）
 js/script.js    … CTAリンクの反映など最小限のJS
+images/         … 実写真（下記「使用している実写真」を参照）
 favicon.svg     … ファビコン
 README.md       … このファイル
 ```
+
+## 使用している実写真
+
+「なぜ、医療監修なのか」「主宰者紹介」「日本から世界へ。天空睡眠®︎が伝える、新しいウェルネスのかたち。」の各セクションに、以下の実写真を使用しています。
+
+| ファイル | 使用箇所 | 内容 |
+|---|---|---|
+| `images/medical-supervision-dr-shuto.jpg` | 医療監修セクション | 監修医師・周東寛医師のプロフィール写真 |
+| `images/amy-founder-portrait.jpg` | 主宰者紹介セクション | 創始者・渡邊明美（Amy）による技術指導の様子 |
+| `images/beautyworld-japan-demonstration.jpg` | TENKU® WORLDWIDEパネル | Beautyworld Japanでの天空睡眠®︎デモンストレーション |
+| `images/worldwide-education-overseas.jpg` | TENKU® WORLDWIDEパネル | 海外での技術指導の様子 |
+| `images/international-student-certificate-osaka.jpg` | TENKU® WORLDWIDEパネル | 海外から大阪へ学びに来た受講生 Gabbey Newton氏（The Head Spa Perth）への認定証授与の様子。証明書に印字された実名・在籍先を掲載しています |
+
+証明書に「in Osaka, Japan」等の印字がある写真のみ、日本国内での認定として掲載しています（写真の見た目だけで国籍・撮影地を推測して記載することはしていません）。
 
 ## ローカルでの表示確認
 
@@ -38,7 +53,7 @@ python3 -m http.server 8000
 
 ```js
 window.SITE_CONFIG = {
-  seminarUrl: "https://lin.ee/FCeqwRp"
+  seminarUrl: "https://lin.ee/C0byPWO"
 };
 ```
 
