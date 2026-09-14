@@ -11,7 +11,7 @@
 (function () {
   "use strict";
 
-  var LINE_MESSAGE = "TENKU®︎天空睡眠スクールについて相談希望です。";
+  var LINE_MESSAGE = "天空睡眠";
 
   function copyText(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
