@@ -21,5 +21,5 @@ window.SITE_CONFIG = {
   ga4MeasurementId: "G-ECL14TWQ9G",
 
   // Meta Pixel ID（例："000000000000000"）。未発行の間は空欄のままにしてください。
-  metaPixelId: ""
+  metaPixelId: "2084827158805378"
 };
