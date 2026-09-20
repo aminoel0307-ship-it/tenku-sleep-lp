@@ -18,7 +18,7 @@ window.SITE_CONFIG = {
   brand: "tenku-sleep",
 
   // GA4 測定ID（例："G-XXXXXXXXXX"）。未発行の間は空欄のままにしてください。
-  ga4MeasurementId: "",
+  ga4MeasurementId: "G-ECL14TWQ9G",
 
   // Meta Pixel ID（例："000000000000000"）。未発行の間は空欄のままにしてください。
   metaPixelId: ""
