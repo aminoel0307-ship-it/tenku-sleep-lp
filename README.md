@@ -14,12 +14,25 @@ GitHub Actions（`.github/workflows/deploy.yml`）により、`main` ブラン�
 ```
 index.html      … LP本体（全15セクション、SEO/OGPメタタグ込み）
 css/style.css   … スタイル（黒×ゴールド×アイボリー、モバイルファースト）
-js/config.js    … CTAリンク先（公式LINE友だち追加URL）の設定（ここを書き換えるだけでOK）
+js/config.js    … CTAリンク先（公式LINE友だち追加URL）・計測ID（GA4/Meta Pixel）の設定（ここを書き換えるだけでOK）
+js/tracking.js  … 計測（GA4／Meta Pixel／UTMパラメータ取得）の共通ロジック
 js/script.js    … CTAリンクの反映など最小限のJS
+js/line-guide.js … LINE相談メッセージのコピー案内
 images/         … 実写真（下記「使用している実写真」を参照）
 favicon.svg     … ファビコン
 README.md       … このファイル
 ```
+
+## 計測（GA4 / Meta Pixel / UTM）について
+
+`js/tracking.js` により、以下の計測を行っています。
+
+- **UTMパラメータの取得・保存**：URLの `utm_source` / `utm_medium` / `utm_campaign` / `utm_content` / `utm_term` を取得し、`sessionStorage` に保存します（同一セッション内でページ回遊しても流入元情報を保持）。
+- **GA4イベント**：`page_view`（自動送信は無効化し、`brand`/UTM付きの独自イベントとして送信）／`cta_click`（全CTAボタン共通）／`line_click`（LINEへの遷移が確定するCTAクリック時）。すべて `brand` / `cta_location` / `utm_source` / `utm_medium` / `utm_campaign` / `utm_content` / `utm_term` をパラメータとして送信します。
+- **Meta Pixel**：`PageView`（ページ読み込み時）／`Lead`（LINE遷移CTAクリック時）。`ViewContent` も `window.AmyTracking.sendMetaEvent(...)` から今後利用できる構造にしています。
+- **CTA位置の判別**：各CTAボタンに `data-cta-location` 属性（`header` / `hero` / `curriculum` / `achievement` / `seminar_top` / `seminar_bottom` / `final`）を付与し、どの位置のCTAがクリックされたかをイベントパラメータで判別できます。
+
+`js/config.js` の `ga4MeasurementId` / `metaPixelId` が空欄（`""`）の間は、計測コードは一切実行されません（エラーも発生しません）。実際に計測を開始する際は、発行済みのGA4測定ID・MetaピクセルIDをこの2箇所に設定してください。
 
 ## 使用している実写真
 
@@ -74,6 +87,7 @@ window.SITE_CONFIG = {
 - **OGP画像（`og-image.png`）**：現時点では未作成・未設置です。SNSシェア時のサムネイル用に、1200×630pxのブランド画像をご用意のうえ、リポジトリ直下に `og-image.png` として追加してください（追加するまでは、SNSでシェアしても画像は表示されません）
 - **フッターのリンク**：「プライバシーポリシー」「特定商取引法に基づく表記」「お問い合わせ」は、現在いずれも仮のリンク（`#`）のままです。正式URLが決まり次第、差し替えてください
 - 各講座の具体的な受講条件（現在は「詳細は無料説明会・公式LINEにてご案内」という案内に留めています）
+- **GA4測定ID／MetaピクセルID**：`js/config.js` の `ga4MeasurementId` / `metaPixelId` は現在空欄です。空欄の間は計測コードが実行されないため、広告・SNS流入の計測を開始するには、発行済みのIDをこの2箇所に設定してください
 
 ## デザイン意図
 
